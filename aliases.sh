@@ -24,5 +24,10 @@ alias agj='ag --js'
 alias agp='ag --python'
 
 # Monitoring
-alias dtop='dshb'
-alias sdu="du -sk -- * | sort -nr | perl -pe '@SI=qw(K M G T P); s:^(\d+?)((\d\d\d)*)\s:\$1.\" \".\$SI[((length \$2)/3)].\"\t\":e'"
+dtop() {
+  dshb
+}
+
+sdu() {
+  du -sk -- * | sort -nr | perl -pe '@SI=qw(K M G T P); s:^(\d+?)((\d\d\d)*)\s:\$1.\" \".\$SI[((length \$2)/3)].\"\t\":e'
+}
